@@ -33,7 +33,6 @@ exports.getProduct = async (req, res) => {
       { description: { $regex: search, $options: "i" } },
     ];
   }
-
   const products = await ProductModels.find(query)
     .skip(skip)
     .limit(limit)
